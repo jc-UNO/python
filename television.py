@@ -1,3 +1,5 @@
+# Made in collaboration with Jake Amundsen
+
 class Television:
     # Class constants
     MIN_VOLUME: int = 0
@@ -55,7 +57,10 @@ class Television:
 
     def __str__(self) -> str:
         """Return a string representation of the TV's state."""
-        return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}"
+        if self.__muted:
+            return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {Television.MIN_VOLUME}"
+        else:
+            return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}"
 
 
 # echo "# python" >> README.md
@@ -65,4 +70,4 @@ class Television:
 # git branch -M main
 # git remote add origin https://github.com/jc-UNO/python.git
 # git push -u origin main
-
+# token
